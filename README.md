@@ -1,3 +1,6 @@
 # STM32f103-device-lib
-A-131, 2023, ERWIN ROMMEL llc.
-Simple stm32 peripherial lib
+Author: A-131
+Created: july 2023
+STM device is a simple library that is analogous to SPL, written by me in order to study the internal device and registers of the STM32f103 microcontroller. 
+This library is also used in some of my other projects.
+Repository on github: 
