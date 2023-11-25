@@ -1,8 +1,7 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#include "stm32f10x_rcc.h"
-#include "stm32f10x_gpio.h"
+#include "stm32f10x.h"
 
 #define MODE_CNF_MSK      0b1111
 
@@ -39,11 +38,12 @@ typedef enum
 	PIN_FREQ_50MHZ
 }GpioPinFreq_e;
 
-void GPIO_clockInit(void);
-void GPIO_configPin(GPIO_TypeDef *GPIOx, uint8_t pin, GpioPinMode_e mode);
-void GPIO_setPin(GPIO_TypeDef *GPIOx, uint8_t pin, uint8_t state);
-void GPIO_togglePin(GPIO_TypeDef *GPIOx, uint8_t pin);
-uint8_t GPIO_readPin(GPIO_TypeDef *GPIOx, uint8_t pin);
+void GPIO_ClockInit(void);
+void GPIO_ConfigPin(GPIO_TypeDef *GPIOx, uint8_t pin, GpioPinMode_e mode);
+void GPIO_SetPin(GPIO_TypeDef *GPIOx, uint8_t pin, uint8_t state);
+void GPIO_TogglePin(GPIO_TypeDef *GPIOx, uint8_t pin);
+
+uint8_t GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint8_t pin);
 
 
 #endif

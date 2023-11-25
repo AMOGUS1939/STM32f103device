@@ -1,11 +1,11 @@
 #include "gpio.h"
 
-void GPIO_clockInit(void)
+void GPIO_ClockInit(void)
 {
 	RCC->APB2ENR |= (RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN);
 }
 
-void GPIO_configPin(GPIO_TypeDef *GPIOx, uint8_t pin, GpioPinMode_e mode)
+void GPIO_ConfigPin(GPIO_TypeDef *GPIOx, uint8_t pin, GpioPinMode_e mode)
 {
 	uint8_t pinOffset;
 
@@ -103,7 +103,7 @@ void GPIO_configPin(GPIO_TypeDef *GPIOx, uint8_t pin, GpioPinMode_e mode)
 	}
 }
 
-void GPIO_setPin(GPIO_TypeDef *GPIOx, uint8_t pin, uint8_t state)
+void GPIO_SetPin(GPIO_TypeDef *GPIOx, uint8_t pin, uint8_t state)
 {
 	if(pin > 15) return;
 
@@ -117,14 +117,14 @@ void GPIO_setPin(GPIO_TypeDef *GPIOx, uint8_t pin, uint8_t state)
 	}
 }
 
-void GPIO_togglePin(GPIO_TypeDef *GPIOx, uint8_t pin)
+void GPIO_TogglePin(GPIO_TypeDef *GPIOx, uint8_t pin)
 {
 	if(pin > 15) return;
 
 	GPIOx->ODR ^= (1 << pin);
 }
 
-uint8_t GPIO_readPin(GPIO_TypeDef *GPIOx, uint8_t pin)
+uint8_t GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint8_t pin)
 {
 	if(pin > 15) return 255;
 
